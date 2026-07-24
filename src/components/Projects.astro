@@ -1,114 +1,200 @@
 ---
-import Arrow from '../assets/icons-vectors/arrow-right.svg';
+import Placeholder from '../assets/placeholder.png?url';
 ---
 
-<section id="projects" class="h-300 p-4 outline-2 outline-green">
+<section id="projects" class="h-300 p-4 mt-5">
   <h1 class="text-5xl uppercase text-center">Recent Projects</h1>
-  <p class="text-center">
-    A list of my projects some contracted work and fun projects
-  </p>
+
   <div
-    class="container lg:grid-cols-3 lg:grid lg:gap-2 w-full lg:h-1/2 mt-3 h-4/5 outline-2 outline-violet-950 p-2 flex justify-between flex-col"
+    class="grid w-[min(calc(100%-4rem),1520px)] mx-auto my-8 gap-4 grid-cols-1 auto-rows-[200px]
+            min-[400px]:grid-cols-2
+            min-[600px]:grid-cols-6
+            min-[800px]:grid-cols-4"
   >
-    <div class="outline-2 outline-pink-950 rounded-md flex justify-between">
-      <div class="rounded-md hidden lg:inline-block">
-        <img src="" alt="project image" class="w-20 h-20 rounded-md" />
-      </div>
-      <div>
-        <h2 class="text-2xl">NombaLens</h2>
-        <p>merchant dashboard and extension built ontop of the nombalens API</p>
-        <div class="flex">
-          <a href="#" class="flex">
-            <span>Read more</span>
-            <Arrow class="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-    <div
-      class="outline-2 outline-pink-950 rounded-md flex justify-between h-1/6"
+    <!-- PROJECT 1 -->
+    <a
+      href="#"
+      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
+              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
+              row-start-2 row-span-1
+              min-[400px]:row-start-3 min-[400px]:row-span-2 min-[400px]:col-span-2
+              min-[600px]:row-start-3 min-[600px]:row-span-2 min-[600px]:col-start-1 min-[600px]:col-span-4
+              min-[800px]:row-start-1 min-[800px]:row-span-1 min-[800px]:col-start-1 min-[800px]:col-span-1"
     >
-      <div class="rounded-md hidden lg:inline-block">
-        <img src="" alt="project image" class="w-20 h-20 rounded-md" />
-      </div>
-      <div>
-        <h2 class="text-2xl">Trackly</h2>
-        <p>Personal Accountant</p>
-        <div class="flex">
-          <a href="#" class="flex">
-            <span>Read more</span>
-            <Arrow class="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-    <div
-      class="outline-2 outline-pink-950 rounded-md flex justify-between h-1/6"
+      <p
+        class="absolute z-[2] top-3 left-auto right-3 text-[0.9rem] text-right text-wrap-balance"
+      >
+        PROJECT 1
+      </p>
+      <img
+        src={Placeholder}
+        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
+      />
+    </a>
+
+    <!-- PROJECT 2 -->
+    <a
+      href="#"
+      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
+              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
+              row-start-1 row-span-1
+              min-[400px]:row-start-1 min-[400px]:row-span-2 min-[400px]:col-span-2
+              min-[600px]:row-start-1 min-[600px]:row-span-2 min-[600px]:col-start-1 min-[600px]:col-span-6
+              min-[800px]:row-start-1 min-[800px]:row-span-2 min-[800px]:col-start-2 min-[800px]:col-span-2"
     >
-      <div class="rounded-md hidden lg:inline-block">
-        <img src="" alt="project image" class="w-20 h-20 rounded-md" />
-      </div>
-      <div>
-        <h2 class="text-2xl">Aby-gadgets</h2>
-        <p>E-commerce website for a gadgets store</p>
-        <div class="flex">
-          <a href="#" class="flex">
-            <span>Read more</span>
-            <Arrow class="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-    <div
-      class="outline-2 outline-pink-950 rounded-md flex justify-between h-1/6"
+      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
+        PROJECT 2
+      </p>
+      <img
+        src={Placeholder}
+        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
+      />
+    </a>
+
+    <!-- PROJECT 3 -->
+    <a
+      href="#"
+      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
+              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
+              row-start-6 row-span-1
+              min-[400px]:row-start-8 min-[400px]:row-span-1 min-[400px]:col-span-2
+              min-[600px]:row-start-5 min-[600px]:row-span-1 min-[600px]:col-start-1 min-[600px]:col-span-6
+              min-[800px]:row-start-1 min-[800px]:row-span-1 min-[800px]:col-start-4 min-[800px]:col-span-1"
     >
-      <div class="rounded-md hidden lg:inline-block">
-        <img src="" alt="project image" class="w-20 h-20 rounded-md" />
-      </div>
-      <div>
-        <h2 class="text-2xl">Prodoc project</h2>
-        <p>tool that utitlizes ai and integrates it into code</p>
-        <div class="flex">
-          <a href="#" class="flex">
-            <span>Read more</span>
-            <Arrow class="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-    <div
-      class="outline-2 outline-pink-950 rounded-md flex justify-between h-1/6"
+      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
+        PROJECT 3
+      </p>
+      <img
+        src={Placeholder}
+        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
+      />
+    </a>
+
+    <!-- PROJECT 4 -->
+    <a
+      href="#"
+      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
+              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
+              row-start-8 row-span-1
+              min-[400px]:row-start-[11] min-[400px]:row-span-2 min-[400px]:col-start-1 min-[400px]:col-span-1
+              min-[600px]:row-start-9 min-[600px]:row-span-3 min-[600px]:col-start-1 min-[600px]:col-span-3
+              min-[800px]:row-start-2 min-[800px]:row-span-2 min-[800px]:col-start-1 min-[800px]:col-span-1"
     >
-      <div class="rounded-md hidden lg:inline-block">
-        <img src="" alt="project image" class="w-20 h-20 rounded-md" />
-      </div>
-      <div>
-        <h2 class="text-2xl">Church Website</h2>
-        <p>Website for a church</p>
-        <div class="flex">
-          <a href="#" class="flex">
-            <span>Read more</span>
-            <Arrow class="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-    <div
-      class="outline-2 outline-pink-950 rounded-md flex justify-between h-1/6"
+      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
+        PROJECT 4
+      </p>
+      <img
+        src={Placeholder}
+        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
+      />
+    </a>
+
+    <!-- PROJECT 5 -->
+    <a
+      href="#"
+      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
+              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
+              row-start-7 row-span-1
+              min-[400px]:row-start-9 min-[400px]:row-span-2 min-[400px]:col-span-2
+              min-[600px]:row-start-6 min-[600px]:row-span-2 min-[600px]:col-start-1 min-[600px]:col-span-4
+              min-[800px]:row-start-2 min-[800px]:row-span-1 min-[800px]:col-start-4 min-[800px]:col-span-1"
     >
-      <div class="rounded-md hidden lg:inline-block">
-        <img src="" alt="project image" class="w-20 h-20 rounded-md" />
-      </div>
-      <div>
-        <h2 class="text-2xl">Real estate management site</h2>
-        <p>Website that handles or works in the real estate sector</p>
-        <div class="flex">
-          <a href="/projects" class="flex">
-            <span>Read more</span>
-            <Arrow class="w-5 h-5" />
-          </a>
-        </div>
-      </div>
+      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
+        PROJECT 5
+      </p>
+      <img
+        src={Placeholder}
+        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
+      />
+    </a>
+
+    <!-- PROJECT 6 -->
+    <a
+      href="#"
+      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
+              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
+              row-start-5 row-span-1
+              min-[400px]:row-start-6 min-[400px]:row-span-2 min-[400px]:col-span-2
+              min-[600px]:row-start-3 min-[600px]:row-span-2 min-[600px]:col-start-5 min-[600px]:col-span-2
+              min-[800px]:row-start-3 min-[800px]:row-span-1 min-[800px]:col-start-2 min-[800px]:col-span-1"
+    >
+      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
+        PROJECT 6
+      </p>
+      <img
+        src={Placeholder}
+        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
+      />
+    </a>
+
+    <!-- PROJECT 7 -->
+    <a
+      href="#"
+      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
+              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
+              row-start-4 row-span-1
+              min-[400px]:row-start-5 min-[400px]:row-span-1 min-[400px]:col-start-2 min-[400px]:col-span-1
+              min-[600px]:row-start-7 min-[600px]:row-span-1 min-[600px]:col-start-5 min-[600px]:col-span-2
+              min-[800px]:row-start-3 min-[800px]:row-span-1 min-[800px]:col-start-3 min-[800px]:col-span-2"
+    >
+      <p
+        class="absolute z-[2] top-3 left-auto right-3 text-[0.9rem] text-right text-wrap-balance"
+      >
+        PROJECT 7
+      </p>
+      <img
+        src={Placeholder}
+        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
+      />
+    </a>
+
+    <!-- PROJECT 8 -->
+    <a
+      href="#"
+      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
+              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
+              row-start-9 row-span-1
+              min-[400px]:row-start-[11] min-[400px]:row-span-2 min-[400px]:col-start-2 min-[400px]:col-span-1
+              min-[600px]:row-start-9 min-[600px]:row-span-3 min-[600px]:col-start-4 min-[600px]:col-span-3
+              min-[800px]:row-start-4 min-[800px]:row-span-1 min-[800px]:col-start-4 min-[800px]:col-span-1"
+    >
+      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
+        PROJECT 8
+      </p>
+      <img
+        src={Placeholder}
+        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
+      />
+    </a>
+
+    <!-- PROJECT 9 -->
+    <a
+      href="#"
+      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
+              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
+              row-start-3 row-span-1
+              min-[400px]:row-start-5 min-[400px]:row-span-1 min-[400px]:col-start-1 min-[400px]:col-span-1
+              min-[600px]:row-start-6 min-[600px]:row-span-1 min-[600px]:col-start-5 min-[600px]:col-span-2
+              min-[800px]:row-start-4 min-[800px]:row-span-1 min-[800px]:col-start-1 min-[800px]:col-span-1"
+    >
+      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
+        PROJECT 9
+      </p>
+      <img
+        src={Placeholder}
+        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
+      />
+    </a>
+
+    <!-- PROJECT 10 -->
+    <div
+      class="relative overflow-hidden rounded-[10px] bg-[#FFEDD5] grid place-content-center text-black
+              row-start-10 row-span-1
+              min-[400px]:row-start-[13] min-[400px]:row-span-1 min-[400px]:col-span-2
+              min-[600px]:row-start-8 min-[600px]:row-span-1 min-[600px]:col-start-1 min-[600px]:col-span-6
+              min-[800px]:row-start-4 min-[800px]:row-span-1 min-[800px]:col-start-2 min-[800px]:col-span-2"
+    >
+      PROJECT 10
     </div>
   </div>
 </section>
