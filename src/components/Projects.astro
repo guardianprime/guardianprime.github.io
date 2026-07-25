@@ -1,13 +1,49 @@
 ---
+import trackly from '../assets/project-images/trackly.png?url';
+import sabiguy from '../assets/project-images/sabiguy.png?url';
+import abygadgets from '../assets/project-images/abygadgets.png?url';
 import Placeholder from '../assets/placeholder.png?url';
 
 const projects = [
-  { name: 'NombaLens', tag: 'Fintech', blurb: 'Merchant dashboard and browser extension built on top of the NombaLens API.' },
-  { name: 'Trackly', tag: 'Web app', blurb: 'Habit and progress tracking app focused on a fast, distraction-free daily flow.' },
-  { name: 'Aby-Gadgets', tag: 'E-commerce', blurb: 'Storefront and checkout experience for a gadgets retailer.' },
-  { name: 'Prodoc', tag: 'SaaS', blurb: 'Document workflow tool for teams handling client paperwork.' },
-  { name: 'Church Website', tag: 'CMS', blurb: 'Content-managed site for a local church community, built for easy self-editing.' },
-  { name: 'Real Estate Manager', tag: 'Platform', blurb: 'Listings and management dashboard for a real estate business.' },
+  {
+    name: 'NombaLens',
+    tag: 'Fintech',
+    blurb:
+      'Merchant dashboard and browser extension built on top of the NombaLens API.',
+    image: Placeholder,
+  },
+  {
+    name: 'Trackly',
+    tag: 'Web app',
+    blurb:
+      'Habit and progress tracking app focused on a fast, distraction-free daily flow.',
+    image: trackly,
+  },
+  {
+    name: 'Aby-Gadgets',
+    tag: 'E-commerce',
+    blurb: 'Storefront and checkout experience for a gadgets retailer.',
+    image: abygadgets,
+  },
+  {
+    name: 'Prodoc',
+    tag: 'SaaS',
+    blurb: 'Document workflow tool for teams handling client paperwork.',
+    image: trackly,
+  },
+  {
+    name: 'Sabi Guy',
+    tag: 'CMS',
+    blurb:
+      'Content-managed site for a local church community, built for easy self-editing.',
+    image: sabiguy,
+  },
+  {
+    name: 'Real Estate Manager',
+    tag: 'Platform',
+    blurb: 'Listings and management dashboard for a real estate business.',
+    image: trackly,
+  },
 ];
 ---
 
@@ -34,16 +70,18 @@ const projects = [
         >
           <div class="relative overflow-hidden">
             <img
-              src={Placeholder}
+              src={project.image}
               alt=""
-              class="h-40 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              class="h-40 w-full object-fit transition-transform duration-700 ease-out group-hover:scale-105"
             />
             <span class="eyebrow absolute left-3 top-3 rounded-full bg-ink-950/80 px-2 py-1 text-gold-400">
               {project.tag}
             </span>
           </div>
           <div class="p-4">
-            <h3 class="font-display text-lg font-semibold text-paper-100">{project.name}</h3>
+            <h3 class="font-display text-lg font-semibold text-paper-100">
+              {project.name}
+            </h3>
             <p class="mt-1 text-sm text-paper-300">{project.blurb}</p>
           </div>
         </a>
