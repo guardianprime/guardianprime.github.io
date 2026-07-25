@@ -1,120 +1,88 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 import Projects from '../components/Projects.astro';
+import Placeholder from '../assets/placeholder.png?url';
+
+const experience = [
+  {
+    name: 'Trackly',
+    role: 'Software Engineer',
+    points: [
+      'Worked across the product, from API endpoints to the pieces users interact with directly.',
+      'Focused on keeping the app fast and dependable as features were added.',
+    ],
+  },
+  {
+    name: 'FlyRank AI',
+    role: 'Backend AI Engineering Intern',
+    points: [
+      'Built backend services that plug LLMs into product workflows.',
+      'Worked on APIs and infrastructure supporting AI-driven features.',
+    ],
+  },
+];
+
+const certifications = [
+  { name: 'Altschool Africa', detail: 'Backend Developer Diploma' },
+  { name: 'FlyRank AI', detail: 'Backend AI Engineering Internship' },
+  { name: 'HNG Internship', detail: 'Backend Development Internship' },
+];
 ---
 
-<Layout>
+<Layout title="Projects — Gordian Okon">
   <Nav />
-  <h1>This is the projects page.</h1>
+
+  <section class="mx-auto max-w-5xl px-4 pt-16 text-center lg:px-6">
+    <span class="eyebrow">Portfolio</span>
+    <h1 class="mt-2 font-display text-4xl font-bold">Projects &amp; experience</h1>
+  </section>
+
   <Projects />
-  <section>
-    <h2>Experience</h2>
-    <div>
-      <div>
-        <img src="../assets/placeholder.png" alt="placeholder image" />
-      </div>
-      <div>
-        <h3>Trackly</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vitae
-          est voluptate temporibus quibusdam labore mollitia quaerat dicta
-          facere similique.
-        </p>
-        <ul>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            adipisci.
-          </li>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            adipisci.
-          </li>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            adipisci.
-          </li>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            adipisci.
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div><img src="../assets/placeholder.png" alt="placeholder image" /></div>
-      <div>
-        <h3>FlyRank AI</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vitae
-          est voluptate temporibus quibusdam labore mollitia quaerat dicta
-          facere similique.
-        </p>
-        <ul>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            adipisci.
-          </li>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            adipisci.
-          </li>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            adipisci.
-          </li>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            adipisci.
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div>
-        <img src="../assets/placeholder.png" alt="placeholder image" />
-      </div>
-      <div>
-        <h3>Trackly</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vitae
-          est voluptate temporibus quibusdam labore mollitia quaerat dicta
-          facere similique.
-        </p>
-        <ul>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            adipisci.
-          </li>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            adipisci.
-          </li>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            adipisci.
-          </li>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            adipisci.
-          </li>
-        </ul>
-      </div>
+
+  <section class="mx-auto max-w-5xl px-4 py-16 lg:px-6">
+    <span class="eyebrow">Track record</span>
+    <h2 class="mt-2 font-display text-3xl font-bold">Experience</h2>
+
+    <div class="mt-8 grid gap-5 sm:grid-cols-2">
+      {
+        experience.map((job) => (
+          <div class="overflow-hidden rounded-2xl border border-ink-600 bg-ink-900">
+            <img src={Placeholder} alt="" class="h-36 w-full object-cover" />
+            <div class="p-5">
+              <h3 class="font-display text-lg font-semibold">{job.name}</h3>
+              <p class="eyebrow mt-1 text-gold-400">{job.role}</p>
+              <ul class="mt-3 space-y-1.5 text-sm text-paper-300">
+                {job.points.map((point) => (
+                  <li class="flex gap-2">
+                    <span class="text-gold-400">›</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </section>
-  <section>
-    <h2>Certifications</h2>
-    <div>
-      <h3>Altschool Africa</h3>
-      <p>Backend Developer Diploma</p>
-    </div>
-    <div>
-      <h3>FlyRank AI</h3>
-      <p>Backend AI Engineering Internship</p>
-    </div>
-    <div>
-      <h3>HNG Internship</h3>
-      <p>Backend development Internship</p>
+
+  <section class="mx-auto max-w-5xl px-4 pb-16 lg:px-6">
+    <span class="eyebrow">Credentials</span>
+    <h2 class="mt-2 font-display text-3xl font-bold">Certifications</h2>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+      {
+        certifications.map((cert) => (
+          <div class="rounded-xl border border-ink-600 bg-ink-900 p-4 text-center">
+            <p class="font-display font-semibold">{cert.name}</p>
+            <p class="mt-1 text-sm text-paper-500">{cert.detail}</p>
+          </div>
+        ))
+      }
     </div>
   </section>
+
+  <Footer />
 </Layout>

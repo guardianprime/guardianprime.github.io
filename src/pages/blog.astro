@@ -1,89 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
+<Layout title="Blog — Gordian Okon">
   <Nav />
-  <h1>Here are some of my thoughts</h1>
-  <section>
-    <div>
-      <h2>random blog post</h2>
-      <img src="../assets/placeholder.png" alt="my blog images" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-        ratione nam rem esse nesciunt at qui maiores eligendi doloremque
-        accusantium.
-      </p>
-      <div>
-        <span>Read More</span>
-        <span>arrow</span>
-      </div>
-    </div>
-    <div>
-      <h2>random blog post</h2>
-      <img src="../assets/placeholder.png" alt="my blog images" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-        ratione nam rem esse nesciunt at qui maiores eligendi doloremque
-        accusantium.
-      </p>
-      <div>
-        <span>Read More</span>
-        <span>arrow</span>
-      </div>
-    </div>
-    <div>
-      <h2>random blog post</h2>
-      <img src="../assets/placeholder.png" alt="my blog images" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-        ratione nam rem esse nesciunt at qui maiores eligendi doloremque
-        accusantium.
-      </p>
-      <div>
-        <span>Read More</span>
-        <span>arrow</span>
-      </div>
-    </div>
-    <div>
-      <h2>random blog post</h2>
-      <img src="../assets/placeholder.png" alt="my blog images" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-        ratione nam rem esse nesciunt at qui maiores eligendi doloremque
-        accusantium.
-      </p>
-      <div>
-        <span>Read More</span>
-        <span>arrow</span>
-      </div>
-    </div>
-    <div>
-      <h2>random blog post</h2>
-      <img src="../assets/placeholder.png" alt="my blog images" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-        ratione nam rem esse nesciunt at qui maiores eligendi doloremque
-        accusantium.
-      </p>
-      <div>
-        <span>Read More</span>
-        <span>arrow</span>
-      </div>
-    </div>
-    <div>
-      <h2>random blog post</h2>
-      <img src="../assets/placeholder.png" alt="my blog images" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-        ratione nam rem esse nesciunt at qui maiores eligendi doloremque
-        accusantium.
-      </p>
-      <div>
-        <span>Read More</span>
-        <span>arrow</span>
-      </div>
-    </div>
+  <section class="mx-auto flex max-w-2xl flex-col items-center px-4 py-20 text-center lg:px-6">
+    <span class="eyebrow">Dispatches</span>
+    <h1 class="mt-2 font-display text-3xl font-bold">Writing, coming soon</h1>
+    <p class="mt-4 max-w-md text-paper-300">
+      I write about backend engineering and AI tooling on Medium and Dev.to.
+      This space will collect those posts directly — check back soon.
+    </p>
   </section>
+  <Footer />
 </Layout>

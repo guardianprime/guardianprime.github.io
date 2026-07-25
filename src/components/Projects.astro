@@ -1,200 +1,53 @@
 ---
 import Placeholder from '../assets/placeholder.png?url';
+
+const projects = [
+  { name: 'NombaLens', tag: 'Fintech', blurb: 'Merchant dashboard and browser extension built on top of the NombaLens API.' },
+  { name: 'Trackly', tag: 'Web app', blurb: 'Habit and progress tracking app focused on a fast, distraction-free daily flow.' },
+  { name: 'Aby-Gadgets', tag: 'E-commerce', blurb: 'Storefront and checkout experience for a gadgets retailer.' },
+  { name: 'Prodoc', tag: 'SaaS', blurb: 'Document workflow tool for teams handling client paperwork.' },
+  { name: 'Church Website', tag: 'CMS', blurb: 'Content-managed site for a local church community, built for easy self-editing.' },
+  { name: 'Real Estate Manager', tag: 'Platform', blurb: 'Listings and management dashboard for a real estate business.' },
+];
 ---
 
-<section id="projects" class="h-300 p-4 mt-5">
-  <h1 class="text-5xl uppercase text-center">Recent Projects</h1>
-
-  <div
-    class="grid w-[min(calc(100%-4rem),1520px)] mx-auto my-8 gap-4 grid-cols-1 auto-rows-[200px]
-            min-[400px]:grid-cols-2
-            min-[600px]:grid-cols-6
-            min-[800px]:grid-cols-4"
-  >
-    <!-- PROJECT 1 -->
-    <a
-      href="#"
-      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
-              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
-              row-start-2 row-span-1
-              min-[400px]:row-start-3 min-[400px]:row-span-2 min-[400px]:col-span-2
-              min-[600px]:row-start-3 min-[600px]:row-span-2 min-[600px]:col-start-1 min-[600px]:col-span-4
-              min-[800px]:row-start-1 min-[800px]:row-span-1 min-[800px]:col-start-1 min-[800px]:col-span-1"
-    >
-      <p
-        class="absolute z-[2] top-3 left-auto right-3 text-[0.9rem] text-right text-wrap-balance"
-      >
-        PROJECT 1
-      </p>
-      <img
-        src={Placeholder}
-        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
-      />
-    </a>
-
-    <!-- PROJECT 2 -->
-    <a
-      href="#"
-      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
-              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
-              row-start-1 row-span-1
-              min-[400px]:row-start-1 min-[400px]:row-span-2 min-[400px]:col-span-2
-              min-[600px]:row-start-1 min-[600px]:row-span-2 min-[600px]:col-start-1 min-[600px]:col-span-6
-              min-[800px]:row-start-1 min-[800px]:row-span-2 min-[800px]:col-start-2 min-[800px]:col-span-2"
-    >
-      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
-        PROJECT 2
-      </p>
-      <img
-        src={Placeholder}
-        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
-      />
-    </a>
-
-    <!-- PROJECT 3 -->
-    <a
-      href="#"
-      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
-              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
-              row-start-6 row-span-1
-              min-[400px]:row-start-8 min-[400px]:row-span-1 min-[400px]:col-span-2
-              min-[600px]:row-start-5 min-[600px]:row-span-1 min-[600px]:col-start-1 min-[600px]:col-span-6
-              min-[800px]:row-start-1 min-[800px]:row-span-1 min-[800px]:col-start-4 min-[800px]:col-span-1"
-    >
-      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
-        PROJECT 3
-      </p>
-      <img
-        src={Placeholder}
-        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
-      />
-    </a>
-
-    <!-- PROJECT 4 -->
-    <a
-      href="#"
-      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
-              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
-              row-start-8 row-span-1
-              min-[400px]:row-start-[11] min-[400px]:row-span-2 min-[400px]:col-start-1 min-[400px]:col-span-1
-              min-[600px]:row-start-9 min-[600px]:row-span-3 min-[600px]:col-start-1 min-[600px]:col-span-3
-              min-[800px]:row-start-2 min-[800px]:row-span-2 min-[800px]:col-start-1 min-[800px]:col-span-1"
-    >
-      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
-        PROJECT 4
-      </p>
-      <img
-        src={Placeholder}
-        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
-      />
-    </a>
-
-    <!-- PROJECT 5 -->
-    <a
-      href="#"
-      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
-              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
-              row-start-7 row-span-1
-              min-[400px]:row-start-9 min-[400px]:row-span-2 min-[400px]:col-span-2
-              min-[600px]:row-start-6 min-[600px]:row-span-2 min-[600px]:col-start-1 min-[600px]:col-span-4
-              min-[800px]:row-start-2 min-[800px]:row-span-1 min-[800px]:col-start-4 min-[800px]:col-span-1"
-    >
-      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
-        PROJECT 5
-      </p>
-      <img
-        src={Placeholder}
-        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
-      />
-    </a>
-
-    <!-- PROJECT 6 -->
-    <a
-      href="#"
-      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
-              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
-              row-start-5 row-span-1
-              min-[400px]:row-start-6 min-[400px]:row-span-2 min-[400px]:col-span-2
-              min-[600px]:row-start-3 min-[600px]:row-span-2 min-[600px]:col-start-5 min-[600px]:col-span-2
-              min-[800px]:row-start-3 min-[800px]:row-span-1 min-[800px]:col-start-2 min-[800px]:col-span-1"
-    >
-      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
-        PROJECT 6
-      </p>
-      <img
-        src={Placeholder}
-        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
-      />
-    </a>
-
-    <!-- PROJECT 7 -->
-    <a
-      href="#"
-      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
-              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
-              row-start-4 row-span-1
-              min-[400px]:row-start-5 min-[400px]:row-span-1 min-[400px]:col-start-2 min-[400px]:col-span-1
-              min-[600px]:row-start-7 min-[600px]:row-span-1 min-[600px]:col-start-5 min-[600px]:col-span-2
-              min-[800px]:row-start-3 min-[800px]:row-span-1 min-[800px]:col-start-3 min-[800px]:col-span-2"
-    >
-      <p
-        class="absolute z-[2] top-3 left-auto right-3 text-[0.9rem] text-right text-wrap-balance"
-      >
-        PROJECT 7
-      </p>
-      <img
-        src={Placeholder}
-        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
-      />
-    </a>
-
-    <!-- PROJECT 8 -->
-    <a
-      href="#"
-      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
-              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
-              row-start-9 row-span-1
-              min-[400px]:row-start-[11] min-[400px]:row-span-2 min-[400px]:col-start-2 min-[400px]:col-span-1
-              min-[600px]:row-start-9 min-[600px]:row-span-3 min-[600px]:col-start-4 min-[600px]:col-span-3
-              min-[800px]:row-start-4 min-[800px]:row-span-1 min-[800px]:col-start-4 min-[800px]:col-span-1"
-    >
-      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
-        PROJECT 8
-      </p>
-      <img
-        src={Placeholder}
-        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
-      />
-    </a>
-
-    <!-- PROJECT 9 -->
-    <a
-      href="#"
-      class="group relative block overflow-hidden rounded-[10px] text-black no-underline
-              after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/25 after:to-transparent after:to-[25%]
-              row-start-3 row-span-1
-              min-[400px]:row-start-5 min-[400px]:row-span-1 min-[400px]:col-start-1 min-[400px]:col-span-1
-              min-[600px]:row-start-6 min-[600px]:row-span-1 min-[600px]:col-start-5 min-[600px]:col-span-2
-              min-[800px]:row-start-4 min-[800px]:row-span-1 min-[800px]:col-start-1 min-[800px]:col-span-1"
-    >
-      <p class="absolute z-[2] top-3 left-3 text-[0.9rem] text-wrap-balance">
-        PROJECT 9
-      </p>
-      <img
-        src={Placeholder}
-        class="w-full h-full max-w-full block object-cover rounded-[10px] transition-transform duration-1000 ease-in-out group-hover:scale-[1.2] group-hover:rotate-[4deg]"
-      />
-    </a>
-
-    <!-- PROJECT 10 -->
-    <div
-      class="relative overflow-hidden rounded-[10px] bg-[#FFEDD5] grid place-content-center text-black
-              row-start-10 row-span-1
-              min-[400px]:row-start-[13] min-[400px]:row-span-1 min-[400px]:col-span-2
-              min-[600px]:row-start-8 min-[600px]:row-span-1 min-[600px]:col-start-1 min-[600px]:col-span-6
-              min-[800px]:row-start-4 min-[800px]:row-span-1 min-[800px]:col-start-2 min-[800px]:col-span-2"
-    >
-      PROJECT 10
+<section id="projects" class="mx-auto max-w-5xl px-4 py-16 lg:px-6">
+  <div class="flex flex-wrap items-end justify-between gap-3">
+    <div>
+      <span class="eyebrow">Field work</span>
+      <h2 class="mt-2 font-display text-3xl font-bold">Recent projects</h2>
     </div>
+    <a
+      href="/projects"
+      class="rounded-full border border-ink-600 px-4 py-2 text-sm font-medium text-paper-100 no-underline transition-colors hover:border-gold-400 hover:text-gold-400"
+    >
+      See all projects →
+    </a>
+  </div>
+
+  <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      projects.map((project) => (
+        <a
+          href="/projects"
+          class="group block overflow-hidden rounded-2xl border border-ink-600 bg-ink-900 no-underline transition-colors hover:border-gold-400"
+        >
+          <div class="relative overflow-hidden">
+            <img
+              src={Placeholder}
+              alt=""
+              class="h-40 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            />
+            <span class="eyebrow absolute left-3 top-3 rounded-full bg-ink-950/80 px-2 py-1 text-gold-400">
+              {project.tag}
+            </span>
+          </div>
+          <div class="p-4">
+            <h3 class="font-display text-lg font-semibold text-paper-100">{project.name}</h3>
+            <p class="mt-1 text-sm text-paper-300">{project.blurb}</p>
+          </div>
+        </a>
+      ))
+    }
   </div>
 </section>

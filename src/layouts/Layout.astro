@@ -1,30 +1,44 @@
 ---
 import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Gordian Okon — Software Engineer',
+  description = 'Gordian Okon is a backend-leaning software engineer building APIs, web products, and AI-powered tools.',
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+
     <!-- Standard favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-    <!-- PNG favicons -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-
-    <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png" />
-
-    <!-- Android / PWA -->
     <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Sora:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <meta name="generator" content={Astro.generator} />
-    <title>Gordian Software developer</title>
+    <title>{title}</title>
   </head>
-  <body class="min-h-screen p-5 min-w-screen bg-taupe-950 text-white">
+  <body class="min-h-screen bg-ink-950 text-paper-100 antialiased">
     <slot />
   </body>
 </html>

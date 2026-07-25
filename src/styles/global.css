@@ -1,3 +1,116 @@
 @import 'tailwindcss';
 
-/* orange hexcode #f46c38 */
+/*
+  Design system -- "access badge" concept.
+  Gordian already has a flip ID-card as his hero; the rest of the site
+  is styled to feel like the same object: ink card stock, a foil-gold
+  seal, warm paper text, perforated dividers between sections.
+*/
+@theme {
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Sora', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-ink-950: #0a0b10;
+  --color-ink-900: #101219;
+  --color-ink-800: #171a24;
+  --color-ink-700: #232734;
+  --color-ink-600: #383e50;
+
+  --color-paper-100: #f3efe4;
+  --color-paper-300: #d9d3c2;
+  --color-paper-500: #9a9686;
+
+  --color-gold-400: #e8b34d;
+  --color-gold-500: #d99a2b;
+  --color-gold-600: #b3791c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink-950);
+  color: var(--color-paper-100);
+  font-family: var(--font-body);
+  background-image:
+    radial-gradient(
+      circle at 15% 0%,
+      color-mix(in srgb, var(--color-gold-500) 7%, transparent),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      color-mix(in srgb, var(--color-gold-500) 5%, transparent),
+      transparent 40%
+    );
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Eyebrow / badge-style label, used above section headings nav-wide */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold-400);
+}
+
+/* Perforated divider -- echoes a tear-off badge stub between sections */
+.stub-divider {
+  position: relative;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-ink-600) 0 8px,
+    transparent 8px 16px
+  );
+}
+.stub-divider::before,
+.stub-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--color-ink-950);
+  border: 1px solid var(--color-ink-600);
+  transform: translateY(-50%);
+}
+.stub-divider::before {
+  left: -7px;
+}
+.stub-divider::after {
+  right: -7px;
+}
+
+/* Visible keyboard focus, kept consistent site-wide */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold-400);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
