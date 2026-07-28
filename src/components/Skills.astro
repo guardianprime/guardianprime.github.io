@@ -1,5 +1,4 @@
 ---
-import placeholder from '../assets/placeholder.png?url';
 import fastApi from '../assets/icons-vectors/fastapi.svg?url';
 import nodejs from '../assets/icons-vectors/nodejs.svg?url';
 import graphql from '../assets/icons-vectors/graphql.svg?url';
@@ -10,13 +9,22 @@ import reactjs from '../assets/icons-vectors/reactjs.svg?url';
 import nextjs from '../assets/icons-vectors/nextjs.svg?url';
 import typescript from '../assets/icons-vectors/typescript.svg?url';
 import tailwind from '../assets/icons-vectors/tailwindcss.svg?url';
-import go from '../assets/icons-vectors/go.svg?url';
 import mysql from '../assets/icons-vectors/mysql.svg?url';
 
 const groups = [
   {
-    title: 'AI agents',
-    copy: 'I build agentic tools that plug LLMs into real workflows — from prompt-driven automation to custom AI features inside existing products.',
+    title: 'Backend engineering',
+    copy: 'APIs, schemas, and data pipelines — this is the core of what I do. Built REST endpoints and Postgres/MongoDB data models for NombaLens; comfortable with query design past basic CRUD.',
+    icons: [
+      { src: nodejs, label: 'Node.js' },
+      { src: postgresql, label: 'PostgreSQL' },
+      { src: mongodb, label: 'MongoDB' },
+      { src: mysql, label: 'MySQL' },
+    ],
+  },
+  {
+    title: 'AI / LLM integration',
+    copy: 'RAG retrieval pipelines with vector stores and LLM API integration (OpenAI, Claude) into production Node.js services — day-to-day work at Flyrank.',
     icons: [
       { src: fastApi, label: 'FastAPI' },
       { src: javascript, label: 'JavaScript' },
@@ -24,8 +32,8 @@ const groups = [
     ],
   },
   {
-    title: 'Web products',
-    copy: 'End-to-end web apps, from API design to polished, responsive frontends — built to ship and scale.',
+    title: 'Full-stack delivery',
+    copy: 'Can take a feature from API to a working UI when a project needs it — Next.js dashboards, typed end to end.',
     icons: [
       { src: reactjs, label: 'React' },
       { src: nextjs, label: 'Next.js' },
@@ -33,29 +41,17 @@ const groups = [
       { src: tailwind, label: 'Tailwind CSS' },
     ],
   },
-  {
-    title: 'Backend engineering',
-    copy: 'APIs, databases, and infrastructure that stay fast and reliable under real production load.',
-    icons: [
-      { src: nodejs, label: 'Node.js' },
-      { src: go, label: 'Go' },
-      { src: postgresql, label: 'PostgreSQL' },
-      { src: mongodb, label: 'MongoDB' },
-      { src: mysql, label: 'MySQL' },
-    ],
-  },
 ];
 ---
 
 <section id="skills" class="mx-auto max-w-5xl px-4 py-16 lg:px-6">
-  <span class="eyebrow">Clearance levels</span>
-  <h2 class="mt-2 font-display text-3xl font-bold">I cut across different stacks</h2>
+  <span class="eyebrow">Skills</span>
+  <h2 class="mt-2 font-display text-3xl font-bold">Where I focus</h2>
 
   <div class="mt-8 grid gap-5 lg:grid-cols-3">
     {
       groups.map((group) => (
         <div class="flex flex-col rounded-2xl border border-ink-600 bg-ink-900 p-5">
-          <img src={placeholder} alt="" class="mb-4 h-32 w-full rounded-lg object-cover" />
           <h3 class="font-display text-lg font-semibold">{group.title}</h3>
           <p class="mt-2 text-sm text-paper-300">{group.copy}</p>
           <div class="mt-4 flex flex-wrap gap-2">

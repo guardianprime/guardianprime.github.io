@@ -1,0 +1,162 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+// Content sourced from Gordian's resume PDF (uploaded July 2026) plus
+// current Flyrank AI internship context.
+
+const experience = [
+  {
+    role: 'Backend AI Engineering Intern',
+    org: 'Flyrank AI',
+    period: '2026 — present',
+    points: [
+      'Build RESTful Node.js endpoints for AI responses',
+      'Set up RAG retrieval pipelines with vector data stores',
+      'Integrate external LLM APIs (OpenAI, Claude) into product workflows',
+      'Handle PostgreSQL / MongoDB / SQLite database operations',
+    ],
+  },
+  {
+    role: 'Backend Engineer',
+    org: 'Trackly',
+    period: '',
+    points: [
+      'Designed and implemented scalable financial taxonomy systems connecting Transactions, Categories, and Groups',
+      'Built secure CRUD APIs and protected category logic for financial workflows',
+      'Developed an automated transaction rules engine based on merchant names, amounts, and keywords',
+      'Designed flexible transaction tagging using many-to-many database relationships',
+      'Built real-time budget aggregation services for spending analysis and reporting',
+      'Implemented transaction sync pipelines between the Mono Transaction Metadata API and Supabase, with automated sync triggered on user login',
+    ],
+  },
+];
+
+const education = [
+  {
+    school: 'AltSchool Africa',
+    detail: 'Diploma in Backend Development',
+  },
+];
+
+const projectsList = [
+  {
+    name: 'NombaLens',
+    detail:
+      'Merchant analytics layer on the Nomba Checkout API — DevCareer x Nomba Hackathon 2026. See full case study on the Projects page.',
+  },
+  {
+    name: 'Towello',
+    detail:
+      'Bayse Africa Hackathon project — contributed to backend architecture, API development, and rapid feature prototyping in a fast-paced team.',
+  },
+  {
+    name: 'Aby-Gadgets',
+    detail:
+      'Fullstack e-commerce platform — REST APIs for auth, product management, and order workflows, with a React/TypeScript frontend.',
+  },
+  {
+    name: 'Fullstack URL Shortener',
+    detail:
+      'URL shortener with redirect tracking and analytics, built with React, Node.js, Express, and MongoDB.',
+  },
+];
+
+const skills = [
+  'Node.js', 'Express.js', 'NestJS', 'TypeScript', 'REST APIs', 'Authentication (OAuth, JWT)',
+  'PostgreSQL', 'MongoDB', 'Supabase', 'Prisma ORM',
+  'React', 'Next.js',
+  'Docker', 'Git', 'Postman', 'Linux CLI', 'pnpm',
+];
+
+const RESUME_PDF_URL = '/resume.pdf';
+---
+
+<Layout
+  title="Resume — Gordian Okon"
+  description="Resume for Gordian Okon, backend engineer."
+>
+  <Nav />
+  <section class="mx-auto max-w-3xl px-4 py-16 lg:px-6">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <span class="eyebrow">Resume</span>
+        <h1 class="mt-2 font-display text-4xl font-bold">Gordian Okon</h1>
+        <p class="mt-1 text-paper-300">Backend Engineer · Lagos, Nigeria</p>
+      </div>
+      <a
+        href={RESUME_PDF_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-full bg-gold-400 px-5 py-2.5 text-sm font-semibold text-ink-950 no-underline transition-transform hover:-translate-y-0.5"
+      >
+        Download PDF
+      </a>
+    </div>
+
+    <div class="stub-divider mt-8"></div>
+
+    <h2 class="eyebrow mt-8">Experience</h2>
+    <div class="mt-4 space-y-6">
+      {
+        experience.map((job) => (
+          <div>
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="font-display text-lg font-semibold">
+                {job.role} · {job.org}
+              </h3>
+              {job.period && <span class="text-sm text-paper-500">{job.period}</span>}
+            </div>
+            <ul class="mt-2 space-y-1 text-sm text-paper-300">
+              {job.points.map((point) => (
+                <li class="flex gap-2">
+                  <span class="text-gold-400">›</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <h2 class="eyebrow mt-10">Education</h2>
+    <div class="mt-4 space-y-2">
+      {
+        education.map((item) => (
+          <p class="text-paper-300">
+            <span class="font-semibold text-paper-100">{item.school}</span>
+            {' — '}
+            {item.detail}
+          </p>
+        ))
+      }
+    </div>
+
+    <h2 class="eyebrow mt-10">Selected projects</h2>
+    <div class="mt-4 space-y-2">
+      {
+        projectsList.map((item) => (
+          <p class="text-paper-300">
+            <span class="font-semibold text-paper-100">{item.name}</span>
+            {' — '}
+            {item.detail}
+          </p>
+        ))
+      }
+    </div>
+
+    <h2 class="eyebrow mt-10">Skills</h2>
+    <div class="mt-3 flex flex-wrap gap-2">
+      {
+        skills.map((skill) => (
+          <span class="rounded-full border border-ink-600 bg-ink-900 px-3 py-1 text-sm text-paper-100">
+            {skill}
+          </span>
+        ))
+      }
+    </div>
+  </section>
+  <Footer />
+</Layout>

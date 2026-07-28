@@ -3,44 +3,62 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
+// Single source of truth for the stack — keep this list identical to
+// Skills.astro, resume.astro, and the GitHub profile README.
 const stack = [
-  'Flutter', 'Swift', 'React Native', 'React', 'Rust', 'Python', 'Node.js', 'Go',
+  'Node.js', 'Express.js', 'NestJS', 'TypeScript', 'PostgreSQL', 'MongoDB', 'Supabase', 'Prisma', 'Docker',
 ];
 
-const highlights = [
-  { name: 'Meno', tag: 'Spiritual app' },
-  { name: 'Victus', tag: 'Habit tracker' },
-  { name: 'Blockroll', tag: 'Fintech' },
-  { name: 'AfroHalalPair', tag: 'Cross-platform' },
+const timeline = [
+  {
+    name: 'AltSchool Africa',
+    tag: 'Backend Engineering Diploma',
+  },
+  {
+    name: 'Flyrank AI',
+    tag: 'Backend AI Engineering Intern — current',
+  },
+  {
+    name: 'NombaLens',
+    tag: 'DevCareer x Nomba Hackathon 2026',
+  },
 ];
 ---
 
 <Layout title="About — Gordian Okon">
   <Nav />
   <section id="about" class="mx-auto max-w-3xl px-4 py-16 lg:px-6">
-    <span class="eyebrow">Personnel file</span>
+    <span class="eyebrow">About</span>
     <h1 class="mt-2 font-display text-4xl font-bold">About me</h1>
 
     <div class="mt-6 space-y-5 text-paper-300">
       <p>
-        I'm Gordian Okon, but the world knows me as Guardianprime — a
-        developer with an obsession for building things that work
-        beautifully and make a real impact.
+        I'm Gordian, a backend engineer who likes the unglamorous parts of
+        software — schema design, API contracts, and the stuff that breaks
+        under real traffic at 2am. I came up through AltSchool Africa's
+        Backend Engineering track, and I'm currently a Backend AI
+        Engineering Intern at Flyrank, where I build RESTful Node.js
+        endpoints, set up RAG retrieval pipelines with vector stores, and
+        integrate external LLM APIs into production workflows.
       </p>
       <p>
-        My journey started with curiosity and a laptop. Today, I've built
-        and shipped 20+ apps on the App Store and Play Store used by people
-        across the globe, built a programming language from scratch with
-        Rust, and contributed to the open-source ecosystem with projects
-        like Dart ML.
+        Outside of that, I build things I can point to. At Trackly I
+        designed a financial taxonomy system connecting transactions,
+        categories, and groups, built an automated transaction-rules
+        engine, and implemented sync pipelines between the Mono
+        Transaction Metadata API and Supabase. NombaLens — a merchant
+        analytics layer on top of the Nomba Checkout API — came out of
+        the DevCareer x Nomba Hackathon 2026. I've also built a handful
+        of smaller systems-flavored projects on my own — a caching
+        proxy, a URL shortener, an image-processing API — mostly to
+        force myself to think harder about the backend fundamentals
+        course work doesn't always cover.
       </p>
       <p>
-        I don't just code — I architect experiences. From spiritual apps
-        like Meno to habit trackers like Victus, from fintech platforms
-        like Blockroll to cross-platform solutions like AfroHalalPair, I
-        bring ideas to life with precision and passion. When I'm not
-        shipping code, I'm writing about tech on Medium and Dev.to, sharing
-        insights with the global developer community.
+        Right now I'm actively working on system design and databases
+        beyond basic CRUD, and layering Docker and CI/CD onto what I
+        already know. If you want the specifics, my projects page has the
+        actual write-ups.
       </p>
     </div>
 
@@ -57,10 +75,10 @@ const highlights = [
       }
     </div>
 
-    <h2 class="eyebrow mt-10">Selected work</h2>
+    <h2 class="eyebrow mt-10">Timeline</h2>
     <div class="mt-3 grid gap-3 sm:grid-cols-2">
       {
-        highlights.map((item) => (
+        timeline.map((item) => (
           <div class="rounded-xl border border-ink-600 bg-ink-900 p-4">
             <p class="font-display font-semibold">{item.name}</p>
             <p class="text-sm text-paper-500">{item.tag}</p>

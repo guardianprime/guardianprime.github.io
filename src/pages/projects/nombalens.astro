@@ -1,0 +1,147 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import nombalens from '../../assets/project-images/nombalens.png?url';
+
+// TODO(Gordian): paste your live demo URL here once you have one deployed.
+const LIVE_DEMO_URL = '';
+const GITHUB_URL = 'https://github.com/guardianprime/NombaLens';
+
+const features = [
+  {
+    title: 'Smart payment method suggestion',
+    detail:
+      'A checkout widget calls the backend on page load. The backend ranks a customer\u2019s last 20 transactions from the Nomba Transactions API by payment-method frequency, and the widget silently reorders checkout options to the method that customer actually uses.',
+  },
+  {
+    title: 'No-code split payment configurator',
+    detail:
+      'Merchants use dashboard sliders to assign revenue percentages across Nomba sub-accounts (must total 100%). The backend validates the split and auto-injects the splitRequest parameter into that merchant\u2019s future checkout orders.',
+  },
+  {
+    title: 'Real-time conversion analytics',
+    detail:
+      'A dashboard showing orders, completed payments, abandoned checkouts, and recovered revenue by payment method, with a 7/30-day trend chart (Recharts) pulled live with no caching layer.',
+  },
+];
+---
+
+<Layout
+  title="NombaLens — Gordian Okon"
+  description="Merchant analytics layer on the Nomba Checkout API: payment-method ranking, a no-code split-payment configurator, and real-time conversion analytics."
+>
+  <Nav />
+
+  <section class="mx-auto max-w-3xl px-4 py-16 lg:px-6">
+    <a
+      href="/projects"
+      class="text-sm text-paper-300 no-underline hover:text-gold-400"
+    >
+      ← All projects
+    </a>
+
+    <div class="mt-4 flex flex-wrap items-center gap-3">
+      <span class="eyebrow rounded-full bg-ink-900 px-2 py-1 text-gold-400">
+        Fintech
+      </span>
+      <h1 class="font-display text-4xl font-bold">NombaLens</h1>
+    </div>
+
+    <img
+      src={nombalens}
+      alt="NombaLens merchant dashboard screenshot"
+      class="mt-6 w-full rounded-2xl border border-ink-600 object-cover"
+    />
+
+    <div class="mt-6 flex flex-wrap gap-3">
+      {
+        LIVE_DEMO_URL ? (
+          <a
+            href={LIVE_DEMO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full bg-gold-400 px-5 py-2.5 text-sm font-semibold text-ink-950 no-underline transition-transform hover:-translate-y-0.5"
+          >
+            Live demo
+          </a>
+        ) : null
+      }
+      <a
+        href={GITHUB_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-full border border-ink-600 px-5 py-2.5 text-sm font-semibold text-paper-100 no-underline transition-colors hover:border-gold-400 hover:text-gold-400"
+      >
+        View on GitHub
+      </a>
+    </div>
+
+    <div class="stub-divider mt-10"></div>
+
+    <h2 class="eyebrow mt-10">The problem</h2>
+    <p class="mt-3 text-paper-300">
+      Merchants using Nomba Checkout had no visibility into why payments
+      failed, which payment methods actually converted for which
+      customers, or how much revenue was being lost to abandoned
+      checkouts. NombaLens was built during the DevCareer x Nomba
+      Hackathon 2026 to close that gap — a merchant-facing intelligence
+      layer built directly on top of the Nomba Checkout and Transactions
+      APIs.
+    </p>
+
+    <h2 class="eyebrow mt-10">What I built</h2>
+    <div class="mt-4 space-y-5">
+      {
+        features.map((feature) => (
+          <div class="rounded-xl border border-ink-600 bg-ink-900 p-4">
+            <h3 class="font-display font-semibold text-paper-100">
+              {feature.title}
+            </h3>
+            <p class="mt-1.5 text-sm text-paper-300">{feature.detail}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <h2 class="eyebrow mt-10">Stack</h2>
+    <div class="mt-3 flex flex-wrap gap-2">
+      {
+        ['TypeScript', 'Node.js', 'Next.js', 'PostgreSQL', 'Redis', 'pnpm workspaces'].map(
+          (tool) => (
+            <span class="rounded-full border border-ink-600 bg-ink-800 px-3 py-1 text-sm text-paper-100">
+              {tool}
+            </span>
+          ),
+        )
+      }
+    </div>
+    <p class="mt-3 text-sm text-paper-500">
+      Built as a pnpm-workspaces monorepo: a Next.js merchant dashboard, a
+      Node.js/TypeScript backend, a checkout widget, and a shared packages
+      library.
+    </p>
+
+    <h2 class="eyebrow mt-10">A bug worth mentioning</h2>
+    <p class="mt-3 text-paper-300">
+      The merchant ID passed from the dashboard to the backend is a
+      Postgres <code class="rounded bg-ink-900 px-1.5 py-0.5 text-sm">uuid</code>
+      column. A stray, unmatched quote in the local
+      <code class="rounded bg-ink-900 px-1.5 py-0.5 text-sm">NEXT_PUBLIC_MERCHANT_ID</code>
+      environment value was silently getting baked into the API request
+      URLs the dashboard built — so every fetch went out with a
+      malformed merchant ID (something like
+      <code class="rounded bg-ink-900 px-1.5 py-0.5 text-sm">'merchant-1"</code>).
+      Postgres rejected the malformed UUID with a 500, and the failure
+      surfaced three layers away from the actual cause — in the
+      dashboard's fetch calls, not the env file. Tracing it back meant
+      working backward from the frontend error, through the API layer,
+      to a single character in a
+      <code class="rounded bg-ink-900 px-1.5 py-0.5 text-sm">.env</code> file.
+      It's the kind of bug that doesn't show up in a code review and
+      only shows up when something that "always worked" suddenly stops.
+    </p>
+  </section>
+
+  <Footer />
+</Layout>

@@ -5,45 +5,71 @@ import abygadgets from '../assets/project-images/abygadgets.png?url';
 import nombalens from '../assets/project-images/nombalens.png?url';
 import Placeholder from '../assets/placeholder.png?url';
 
+// href: internal case-study page when one exists, otherwise the GitHub
+// repo directly — never a link that just re-shows this same list.
 const projects = [
   {
     name: 'NombaLens',
     tag: 'Fintech',
     blurb:
-      'Merchant dashboard and browser extension built on top of the NombaLens API.',
+      'Merchant analytics layer on the Nomba Checkout API — payment-method ranking, split-payment configurator, and a real-time conversion dashboard.',
     image: nombalens,
+    href: '/projects/nombalens',
   },
   {
     name: 'Trackly',
-    tag: 'Web app',
+    tag: 'Fintech',
     blurb:
-      'Trackly connects every bank account you have and tracks your spending automatically, gives you weekly/monthly summaries and personalized insights on your financial habits.',
+      'Financial taxonomy system with an automated transaction-rules engine and a Mono API \u2192 Supabase sync pipeline, triggered on user login.',
     image: trackly,
+    href: 'https://github.com/guardianprime',
   },
   {
     name: 'Aby-Gadgets',
     tag: 'E-commerce',
-    blurb: 'Storefront and checkout experience for a gadgets retailer.',
+    blurb:
+      'Fullstack storefront and checkout — REST APIs for auth, product management, and order workflows.',
     image: abygadgets,
+    href: 'https://github.com/guardianprime/aby-gadgets-ecommerce',
+  },
+  {
+    name: 'Fullstack URL Shortener',
+    tag: 'Systems',
+    blurb:
+      'URL shortener with redirect tracking and analytics endpoints, built with Node.js, Express, and MongoDB.',
+    image: Placeholder,
+    href: 'https://github.com/guardianprime/url-shortener',
   },
   {
     name: 'Prodoc',
     tag: 'SaaS',
-    blurb: 'Document workflow tool for teams handling client paperwork.',
+    blurb:
+      'Backend that extracts and structures data from invoices and receipts using OCR and NLP.',
     image: trackly,
+    href: 'https://github.com/guardianprime/prodoc',
+  },
+  {
+    name: 'Towello',
+    tag: 'Hackathon',
+    blurb:
+      'Bayse Africa Hackathon project — backend architecture and API development for a rapidly prototyped product.',
+    image: Placeholder,
+    href: 'https://github.com/guardianprime',
   },
   {
     name: 'Sabi Guy',
-    tag: 'Wep App',
+    tag: 'Web app',
     blurb:
-      'logistics and dispatch services, helping individuals and businesses move items quickly within Ibadan and its environs',
+      'Logistics and dispatch platform helping individuals and businesses move items quickly within Ibadan and its environs.',
     image: sabiguy,
+    href: 'https://github.com/guardianprime',
   },
   {
     name: 'Real Estate Manager',
     tag: 'Platform',
     blurb: 'Listings and management dashboard for a real estate business.',
     image: trackly,
+    href: 'https://github.com/guardianprime',
   },
 ];
 ---
@@ -51,7 +77,7 @@ const projects = [
 <section id="projects" class="mx-auto max-w-5xl px-4 py-16 lg:px-6">
   <div class="flex flex-wrap items-end justify-between gap-3">
     <div>
-      <span class="eyebrow">Field work</span>
+      <span class="eyebrow">Projects</span>
       <h2 class="mt-2 font-display text-3xl font-bold">Recent projects</h2>
     </div>
     <a
@@ -66,13 +92,13 @@ const projects = [
     {
       projects.map((project) => (
         <a
-          href="/projects"
+          href={project.href}
           class="group block overflow-hidden rounded-2xl border border-ink-600 bg-ink-900 no-underline transition-colors hover:border-gold-400"
         >
           <div class="relative overflow-hidden">
             <img
               src={project.image}
-              alt=""
+              alt={`${project.name} — ${project.tag} project screenshot`}
               class="h-40 w-full object-fit transition-transform duration-700 ease-out group-hover:scale-105"
             />
             <span class="eyebrow absolute left-3 top-3 rounded-full bg-ink-950/80 px-2 py-1 text-gold-400">
