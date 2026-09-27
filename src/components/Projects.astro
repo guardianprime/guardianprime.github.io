@@ -3,11 +3,42 @@ import trackly from '../assets/project-images/trackly.png?url';
 import sabiguy from '../assets/project-images/sabiguy.png?url';
 import abygadgets from '../assets/project-images/abygadgets.png?url';
 import nombalens from '../assets/project-images/nombalens.png?url';
-import Placeholder from '../assets/placeholder.png?url';
+import korusa from '../assets/project-images/korusa.jpg?url';
+import vocintervue from '../assets/project-images/vocintervue.jpg?url';
 
 // href: internal case-study page when one exists, otherwise the GitHub
 // repo directly — never a link that just re-shows this same list.
 const projects = [
+  {
+    name: 'Trackly',
+    tag: 'Fintech',
+    blurb:
+      'Financial taxonomy system with an automated transaction-rules engine and a Mono API \u2192 Supabase sync pipeline, triggered on user login.',
+    image: trackly,
+    href: 'https://trackly.com.ng',
+  },
+   {
+    name: 'Sabi Guy',
+    tag: 'Web app',
+    blurb:
+      'Logistics and dispatch platform helping individuals and businesses move items quickly within Ibadan and its environs.',
+    image: sabiguy,
+    href: 'https://sabiguy.com',
+  },
+  {
+    name: 'Korusa app',
+    tag: 'Social media platform',
+    blurb: 'Social media platform that works just like reddit and doulingo.',
+    image: korusa,
+    href: 'https://korusa.app',
+  },
+  {
+    name: 'Vocintervue',
+    tag: 'AI platform',
+    blurb: 'AI interview practice platform, tailors cv to job applications.',
+    image: vocintervue,
+    href: 'https://vocintervue.com',
+  },
   {
     name: 'NombaLens',
     tag: 'Fintech',
@@ -17,60 +48,14 @@ const projects = [
     href: '/projects/nombalens',
   },
   {
-    name: 'Trackly',
-    tag: 'Fintech',
-    blurb:
-      'Financial taxonomy system with an automated transaction-rules engine and a Mono API \u2192 Supabase sync pipeline, triggered on user login.',
-    image: trackly,
-    href: 'https://github.com/guardianprime',
-  },
-  {
     name: 'Aby-Gadgets',
     tag: 'E-commerce',
     blurb:
       'Fullstack storefront and checkout — REST APIs for auth, product management, and order workflows.',
     image: abygadgets,
-    href: 'https://github.com/guardianprime/aby-gadgets-ecommerce',
+    href: 'https:aby-gadgets-ecommerce-frontend.vercel.app',
   },
-  {
-    name: 'Fullstack URL Shortener',
-    tag: 'Systems',
-    blurb:
-      'URL shortener with redirect tracking and analytics endpoints, built with Node.js, Express, and MongoDB.',
-    image: Placeholder,
-    href: 'https://github.com/guardianprime/url-shortener',
-  },
-  {
-    name: 'Prodoc',
-    tag: 'SaaS',
-    blurb:
-      'Backend that extracts and structures data from invoices and receipts using OCR and NLP.',
-    image: trackly,
-    href: 'https://github.com/guardianprime/prodoc',
-  },
-  {
-    name: 'Towello',
-    tag: 'Hackathon',
-    blurb:
-      'Bayse Africa Hackathon project — backend architecture and API development for a rapidly prototyped product.',
-    image: Placeholder,
-    href: 'https://github.com/guardianprime',
-  },
-  {
-    name: 'Sabi Guy',
-    tag: 'Web app',
-    blurb:
-      'Logistics and dispatch platform helping individuals and businesses move items quickly within Ibadan and its environs.',
-    image: sabiguy,
-    href: 'https://github.com/guardianprime',
-  },
-  {
-    name: 'Real Estate Manager',
-    tag: 'Platform',
-    blurb: 'Listings and management dashboard for a real estate business.',
-    image: trackly,
-    href: 'https://github.com/guardianprime',
-  },
+
 ];
 ---
 
